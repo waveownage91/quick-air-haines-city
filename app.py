@@ -162,6 +162,18 @@ st.markdown(
 )
 st.markdown("</div>", unsafe_allow_html=True)
 
+st.markdown("<div class='testimonials-card'>", unsafe_allow_html=True)
+st.markdown("<h3>Community feedback</h3>", unsafe_allow_html=True)
+st.markdown(
+    "<div class='testimonial-grid'>"
+    "<div class='testimonial-card'><p>“Quick Air helped us the same day and kept our home comfortable during the heat wave. Professional and easy to work with.”</p><div class='name'>— Local homeowner</div></div>"
+    "<div class='testimonial-card'><p>“Fast follow-up, clear pricing, and bilingual support made the process stress-free. Highly recommended for Haines City AC issues.”</p><div class='name'>— Florida resident</div></div>"
+    "<div class='testimonial-card'><p>“They arrived prepared, explained the repair, and solved the problem quickly. Felt like the team genuinely cared about our home.”</p><div class='name'>— Repeat customer</div></div>"
+    "</div>",
+    unsafe_allow_html=True,
+)
+st.markdown("</div>", unsafe_allow_html=True)
+
 st.markdown("<div id='assistant-form' class='assistant-card'>", unsafe_allow_html=True)
 st.markdown("<h2>Chatbot-style Intake Assistant</h2>", unsafe_allow_html=True)
 st.markdown(
