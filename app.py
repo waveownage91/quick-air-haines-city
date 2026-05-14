@@ -12,6 +12,21 @@ ZAPIER_WEBHOOK_URL = "https://hooks.zapier.com/your-webhook-url"
 TWILIO_PHONE_NUMBER = "+1XXXXXXXXXX"
 BUSINESS_NAME = "Quick Air Haines City"
 LEADS_FILE = Path(__file__).resolve().parent / "leads.csv"
+ASSETS_DIR = Path(__file__).resolve().parent / "assets"
+
+import base64
+
+def image_data_uri(path: Path) -> str:
+    if not path.exists():
+        return ""
+    mime_type = "image/jpeg"
+    encoded = base64.b64encode(path.read_bytes()).decode("ascii")
+    return f"data:{mime_type};base64,{encoded}"
+
+BROKEN_HOME_IMG = image_data_uri(ASSETS_DIR / "broken-ac-home.jpg")
+DIAGNOSE_IMG = image_data_uri(ASSETS_DIR / "ac-technician-diagnose.jpg")
+REPAIR_IMG = image_data_uri(ASSETS_DIR / "ac-technician-repair.jpg")
+COOL_FAMILY_IMG = image_data_uri(ASSETS_DIR / "cool-family-home.jpg")
 
 STYLE = """
 <style>
@@ -146,7 +161,7 @@ st.markdown(
     "</div>"
     f"<p class='response-line'>{tr('Average response time: under 5 minutes','Tiempo promedio de respuesta: menos de 5 minutos')}</p>"
     "</div>"
-    f"<div class='story-image' style=\"background-image: url('assets/broken-ac-home.jpg');\">"
+    f"<div class='story-image' style=\"background-image: url('{BROKEN_HOME_IMG}');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     "</div>"
@@ -154,7 +169,7 @@ st.markdown(
     "<div class='section-divider'></div>"
     "<div class='story-section'>"
     "<div class='story-panel'>"
-    f"<div class='story-image' style=\"background-image: url('assets/ac-technician-diagnose.jpg');\">"
+    f"<div class='story-image' style=\"background-image: url('{DIAGNOSE_IMG}');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     f"<div class='story-copy'>"
@@ -172,7 +187,7 @@ st.markdown(
     f"<p class='story-text'>{tr('We fix the cooling issue with a trusted local crew, using quality parts and a safety-first approach.','Reparamos el problema de enfriamiento con un equipo local de confianza, utilizando piezas de calidad y un enfoque de seguridad primero.')}</p>"
     f"<p class='story-note'>{tr('Same-day repair when possible, and clear communication every step of the way.','Reparación el mismo día cuando sea posible y comunicación clara en cada paso.')}</p>"
     "</div>"
-    f"<div class='story-image' style=\"background-image: url('assets/ac-technician-repair.jpg');\">"
+    f"<div class='story-image' style=\"background-image: url('{REPAIR_IMG}');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     "</div>"
@@ -180,7 +195,7 @@ st.markdown(
     "<div class='section-divider'></div>"
     "<div class='story-section'>"
     "<div class='story-panel'>"
-    f"<div class='story-image' style=\"background-image: url('assets/cool-family-home.jpg');\">"
+    f"<div class='story-image' style=\"background-image: url('{COOL_FAMILY_IMG}');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     f"<div class='story-copy'>"
