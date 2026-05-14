@@ -64,6 +64,7 @@ section.main {padding: 1.5rem 0 0; max-width: 100%;}
 .story-text {color: #334155; line-height: 1.75; margin-bottom: 1.2rem; max-width: 720px;}
 .story-note {font-size: 0.98rem; color: #475569; margin-top: 0.5rem;}
 .story-image {position: relative; min-height: 260px; border-radius: 28px; background-color: #eaf3ff; background-size: cover; background-position: center; box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12); overflow: hidden;}
+.story-image.large {min-height: 420px; background-position: center top;}
 .story-overlay {position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 69, 150, 0.08), rgba(255, 255, 255, 0.26));}
 .section-divider {height: 2px; margin: 1.5rem 0; background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.18), transparent);}
 .final-cta {text-align: center; padding: 2rem 1.25rem; border-radius: 28px; background: linear-gradient(180deg, #fff 0%, #e9f4ff 100%); border: 1px solid rgba(13, 110, 253, 0.14); box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08); margin-bottom: 1.5rem;}
@@ -187,7 +188,7 @@ st.markdown(
     f"<p class='story-text'>{tr('We fix the cooling issue with a trusted local crew, using quality parts and a safety-first approach.','Reparamos el problema de enfriamiento con un equipo local de confianza, utilizando piezas de calidad y un enfoque de seguridad primero.')}</p>"
     f"<p class='story-note'>{tr('Same-day repair when possible, and clear communication every step of the way.','Reparación el mismo día cuando sea posible y comunicación clara en cada paso.')}</p>"
     "</div>"
-    f"<div class='story-image' style=\"background-image: url('{REPAIR_IMG}');\">"
+    f"<div class='story-image large' style=\"background-image: url('{REPAIR_IMG}');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     "</div>"
