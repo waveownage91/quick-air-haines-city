@@ -77,6 +77,7 @@ st.markdown(
 )
 st.markdown(
     f"<div class='cta-group'><a class='cta-button' href='#assistant-form'>Get Fast AC Help</a>"
+    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>Call Now</a></div>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
