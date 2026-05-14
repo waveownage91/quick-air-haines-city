@@ -66,61 +66,73 @@ section.main {padding: 0; max-width: 100%;}
 
 st.markdown(STYLE, unsafe_allow_html=True)
 
+page_language = st.radio(
+    "Language / Idioma",
+    ["English", "Español"],
+    index=0,
+    key="page_language",
+    horizontal=True,
+)
+
+if page_language not in ["English", "Español"]:
+    page_language = "English"
+
+tr = lambda en, es: es if page_language == "Español" else en
+
 st.markdown("<div class='hero'>", unsafe_allow_html=True)
-st.markdown("<div class='eyebrow'>Emergency AC Repair in Haines City</div>", unsafe_allow_html=True)
-st.markdown("<h1>Emergency AC Repair in Haines City</h1>", unsafe_allow_html=True)
+st.markdown(f"<div class='eyebrow'>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</div>", unsafe_allow_html=True)
+st.markdown(f"<h1>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</h1>", unsafe_allow_html=True)
 st.markdown(
-    "<p class='subheadline'>Fast help for AC problems, cooling issues, and urgent HVAC repairs.</p>",
+    f"<p class='subheadline'>{tr('Fast help for AC problems, cooling issues, and urgent HVAC repairs.','Ayuda rápida para problemas de aire acondicionado, problemas de enfriamiento y reparaciones urgentes de HVAC.')}</p>",
     unsafe_allow_html=True,
 )
-st.markdown("<p class='spanish-line'>🇪🇸 Hablamos Español</p>", unsafe_allow_html=True)
+st.markdown(f"<p class='spanish-line'>{tr('🇪🇸 Hablamos Español','🇪🇸 Hablamos Español')}</p>", unsafe_allow_html=True)
 st.markdown(
     "<div class='trust-grid'>"
-    "<div class='trust-pill'>Same-Day Service</div>"
-    "<div class='trust-pill'>Local Haines City Area</div>"
-    "<div class='trust-pill'>English & Spanish Support</div>"
-    "<div class='trust-pill'>Fast Response Times</div>"
+    f"<div class='trust-pill'>{tr('Same-Day Service','Servicio el mismo día')}</div>"
+    f"<div class='trust-pill'>{tr('Local Haines City Area','Área local de Haines City')}</div>"
+    f"<div class='trust-pill'>{tr('English & Spanish Support','Soporte en inglés y español')}</div>"
+    f"<div class='trust-pill'>{tr('Fast Response Times','Tiempos de respuesta rápidos')}</div>"
     "</div>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    "<p class='response-line'>Average response time: under 5 minutes</p>"
-    "<p class='response-line'>Tiempo promedio de respuesta: menos de 5 minutos</p>",
+    f"<p class='response-line'>{tr('Average response time: under 5 minutes','Tiempo promedio de respuesta: menos de 5 minutos')}</p>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    f"<div class='cta-group'><a class='cta-button' href='#assistant-form'>🚨 Get Fast AC Help</a>"
-    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>🚨 Obtener Ayuda Rápida</a></div>",
+    f"<div class='cta-group'><a class='cta-button' href='#assistant-form'>{tr('🚨 Get Fast AC Help','🚨 Obtener ayuda rápida')}</a>"
+    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>{tr('🚨 Call Now','🚨 Llamar ahora')}</a></div>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='next-steps-card'>", unsafe_allow_html=True)
-st.markdown("<h2>What Happens Next?</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2>{tr('What Happens Next?','¿Qué sucede después?')}</h2>", unsafe_allow_html=True)
 st.markdown(
     "<ol>"
-    "<li><strong>Submit your AC issue</strong><br>Envíe su problema con el aire acondicionado</li>"
-    "<li><strong>We review your request</strong><br>Revisamos su solicitud</li>"
-    "<li><strong>A local AC specialist contacts you shortly</strong><br>Un especialista local se comunicará pronto</li>"
+    f"<li>{tr('Submit your AC issue','Envíe su problema con el aire acondicionado')}</li>"
+    f"<li>{tr('We review your request','Revisamos su solicitud')}</li>"
+    f"<li>{tr('A local AC specialist contacts you shortly','Un especialista local se comunicará pronto')}</li>"
     "</ol>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='section-card'>", unsafe_allow_html=True)
-st.markdown("<h2>Emergency AC Help</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2>{tr('Emergency AC Help','Ayuda de AC de emergencia')}</h2>", unsafe_allow_html=True)
 st.markdown(
-    "<p>Urgent cooling problems are dangerous in Florida. Tell us what’s wrong now and we’ll route the request to a qualified local technician.</p>",
+    f"<p>{tr('Urgent cooling problems are dangerous in Florida. Tell us what’s wrong now and we’ll route your request to a qualified local technician.','Los problemas de refrigeración urgentes son peligrosos en Florida. Díganos qué está mal ahora y dirigiremos su solicitud a un técnico local calificado.')}</p>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='badge-grid'>", unsafe_allow_html=True)
 for label in [
-    "Fast local response",
-    "Trusted HVAC technicians",
-    "Bilingual support",
-    "Transparent service pricing",
+    tr("Fast local response","Respuesta local rápida"),
+    tr("Trusted HVAC technicians","Técnicos HVAC de confianza"),
+    tr("Bilingual support","Soporte bilingüe"),
+    tr("Transparent service pricing","Precios transparentes"),
 ]:
     st.markdown(
         f"<div class='badge'><strong>{label}</strong></div>",
@@ -129,13 +141,13 @@ for label in [
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='section-card'>", unsafe_allow_html=True)
-st.markdown("<h2>What We Do</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2>{tr('What We Do','Lo que hacemos')}</h2>", unsafe_allow_html=True)
 st.markdown(
     "<div class='service-grid'>"
-    "<div class='service-card'><strong>AC Repair</strong><p>Fast repair for no cooling, weak airflow, or strange HVAC noise.</p></div>"
-    "<div class='service-card'><strong>Emergency Service</strong><p>Priority help for urgent cooling failures and leaks.</p></div>"
-    "<div class='service-card'><strong>Maintenance</strong><p>Preventive checks and seasonal safety tune-ups.</p></div>"
-    "<div class='service-card'><strong>Thermostat Support</strong><p>Replacement, programming, and thermostat troubleshooting.</p></div>"
+    f"<div class='service-card'><strong>{tr('AC Repair','Reparación de AC')}</strong><p>{tr('Fast repair for no cooling, weak airflow, or strange HVAC noise.','Reparación rápida para falta de enfriamiento, flujo de aire débil o ruidos extraños del HVAC.')}</p></div>"
+    f"<div class='service-card'><strong>{tr('Emergency Service','Servicio de emergencia')}</strong><p>{tr('Priority help for urgent cooling failures and leaks.','Ayuda prioritaria para fallas de enfriamiento urgentes y fugas.')}</p></div>"
+    f"<div class='service-card'><strong>{tr('Maintenance','Mantenimiento')}</strong><p>{tr('Preventive checks and seasonal safety tune-ups.','Revisiones preventivas y ajustes de seguridad de temporada.')}</p></div>"
+    f"<div class='service-card'><strong>{tr('Thermostat Support','Soporte de termostatos')}</strong><p>{tr('Replacement, programming, and thermostat troubleshooting.','Reemplazo, programación y solución de problemas de termostatos.')}</p></div>"
     "</div>",
     unsafe_allow_html=True,
 )
@@ -143,71 +155,75 @@ st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='why-grid'>", unsafe_allow_html=True)
 st.markdown(
-    "<div class='section-card'><h3>Why Quick Air Haines City</h3><ul>"
-    "<li>Local team focused on Haines City homes</li>"
-    "<li>Fast response and same-day attention</li>"
-    "<li>Bilingual support in English and Spanish</li>"
-    "<li>Clear estimates before service begins</li>"
+    f"<div class='section-card'><h3>{tr('Why Quick Air Haines City','Por qué Quick Air Haines City')}</h3><ul>"
+    f"<li>{tr('Local team focused on Haines City homes','Equipo local enfocado en hogares de Haines City')}</li>"
+    f"<li>{tr('Fast response and same-day attention','Respuesta rápida y atención el mismo día')}</li>"
+    f"<li>{tr('Bilingual support in English and Spanish','Soporte bilingüe en inglés y español')}</li>"
+    f"<li>{tr('Clear estimates before service begins','Presupuestos claros antes de comenzar el servicio')}</li>"
     "</ul></div>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    "<div class='section-card'><h3>Trusted by Homeowners</h3><ul>"
-    "<li>Real local service, no national call center</li>"
-    "<li>Licensed technicians and friendly support</li>"
-    "<li>Transparent communication every step</li>"
-    "<li>Designed for Florida heat and humidity</li>"
+    f"<div class='section-card'><h3>{tr('Trusted by Homeowners','Confiado por los propietarios')}</h3><ul>"
+    f"<li>{tr('Real local service, no national call center','Servicio local real, no centro de llamadas nacional')}</li>"
+    f"<li>{tr('Licensed technicians and friendly support','Técnicos con licencia y soporte amable')}</li>"
+    f"<li>{tr('Transparent communication every step','Comunicación transparente en cada paso')}</li>"
+    f"<li>{tr('Designed for Florida heat and humidity','Diseñado para el calor y la humedad de Florida')}</li>"
     "</ul></div>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='spanish-block'>", unsafe_allow_html=True)
-st.markdown("<h2>Servicio en Español</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2>{tr('Servicio en Español','Servicio en Español')}</h2>", unsafe_allow_html=True)
 st.markdown(
-    "<p>Reparación de aire acondicionado en Haines City con servicio rápido y confiable. Hablamos español y podemos responder por texto, llamada o correo electrónico.</p>",
+    f"<p>{tr('Haines City AC repair with fast, reliable service. We speak Spanish and can respond by text, call, or email.','Reparación de aire acondicionado en Haines City con servicio rápido y confiable. Hablamos español y podemos responder por texto, llamada o correo electrónico.')}</p>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='service-area'>", unsafe_allow_html=True)
-st.markdown("<h3>Service Area</h3>", unsafe_allow_html=True)
+st.markdown(f"<h3>{tr('Service Area','Área de servicio')}</h3>", unsafe_allow_html=True)
 st.markdown(
-    "<p>Serving Haines City, Lake Wales, Davenport, Winter Haven, Polk City, Babson Park, and nearby Polk County neighborhoods.</p>",
+    f"<p>{tr('Serving Haines City, Lake Wales, Davenport, Winter Haven, Polk City, Babson Park, and nearby Polk County neighborhoods.','Atendemos Haines City, Lake Wales, Davenport, Winter Haven, Polk City, Babson Park y vecindarios cercanos del condado de Polk.')}</p>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div id='assistant-form' class='assistant-card'>", unsafe_allow_html=True)
-st.markdown("<h2>Hi 👋 What seems to be going on with your AC?</h2>", unsafe_allow_html=True)
+st.markdown(f"<h2>{tr('Hi 👋 What seems to be going on with your AC?','Hola 👋 ¿Qué está pasando con su aire acondicionado?')}</h2>", unsafe_allow_html=True)
 st.markdown(
-    "<p class='assistant-note'>This quick request takes under 30 seconds. A local AC specialist will review it fast.</p>",
+    f"<p class='assistant-note'>{tr('This quick request takes under 30 seconds. A local AC specialist will review it fast.','Esta solicitud rápida toma menos de 30 segundos. Un especialista local de AC lo revisará pronto.')}</p>",
     unsafe_allow_html=True,
 )
 
 with st.form(key="assistant_form"):
-    preferred_language = st.selectbox("Preferred language", ["English", "Español"], index=0)
-    name = st.text_input("Full name", placeholder="Juan Perez / Jane Smith")
-    phone = st.text_input("Phone number", placeholder="(123) 456-7890")
-    email = st.text_input("Email address", placeholder="you@example.com")
-    city_zip = st.text_input("City or ZIP code", placeholder="Haines City, FL or 33844")
-    issue = st.text_area("What’s happening with your AC?", placeholder="No cool air, leak, strange noise, etc.")
+    preferred_language = st.selectbox(
+        tr("Preferred language","Idioma preferido"),
+        ["English", "Español"],
+        index=0 if page_language == "English" else 1,
+    )
+    name = st.text_input(tr("Full name","Nombre completo"), placeholder=tr("Juan Perez / Jane Smith","Juan Pérez / Jane Smith"))
+    phone = st.text_input(tr("Phone number","Teléfono"), placeholder=tr("(123) 456-7890","(123) 456-7890"))
+    email = st.text_input(tr("Email address","Correo electrónico"), placeholder=tr("you@example.com","usted@ejemplo.com"))
+    city_zip = st.text_input(tr("City or ZIP code","Ciudad o código postal"), placeholder=tr("Haines City, FL or 33844","Haines City, FL o 33844"))
+    issue = st.text_area(tr("What’s happening with your AC?","¿Qué está pasando con su aire acondicionado?"), placeholder=tr("No cool air, leak, strange noise, etc.","Sin aire frío, fuga, ruido extraño, etc."))
     emergency_level = st.selectbox(
-        "Emergency level",
-        ["Routine check", "Needs service soon", "Urgent — no cooling"],
+        tr("Emergency level","Nivel de emergencia"),
+        [tr("Routine check","Revisión rutinaria"), tr("Needs service soon","Necesita servicio pronto"), tr("Urgent — no cooling","Urgente — sin enfriamiento")],
         index=2,
     )
     contact_method = st.radio(
-        "Preferred contact method",
-        ["Text message", "Phone call", "Email"],
+        tr("Preferred contact method","Método de contacto preferido"),
+        [tr("Text message","Mensaje de texto"), tr("Phone call","Llamada telefónica"), tr("Email","Correo electrónico")],
         index=0,
         horizontal=True,
     )
-    submit_request = st.form_submit_button("🚨 Get Fast AC Help")
+    submit_request = st.form_submit_button(tr("🚨 Get Fast AC Help","🚨 Obtener ayuda rápida"))
 
 if submit_request:
     if not name.strip() or not phone.strip() or not email.strip() or not city_zip.strip() or not issue.strip():
-        st.error("Please complete all fields so we can route your request quickly.")
+        st.error(tr("Please complete all fields so we can route your request quickly.","Por favor complete todos los campos para que podamos enviar su solicitud rápidamente."))
     else:
         lead_data = {
             "timestamp": datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -246,7 +262,7 @@ if submit_request:
             st.success("Thanks! We received your request. A local AC specialist will contact you shortly.")
 
         st.markdown(
-            f"<p class='small-note'>Lead saved to <strong>{LEADS_FILE.name}</strong>. Ready for email, SMS, Zapier, or Twilio integration.</p>",
+            f"<p class='small-note'>{tr('Lead saved to','Lead guardado en')} <strong>{LEADS_FILE.name}</strong>. {tr('Ready for email, SMS, Zapier, or Twilio integration.','Listo para integración por correo electrónico, SMS, Zapier o Twilio.')}</p>",
             unsafe_allow_html=True,
         )
         st.code(log_line)
@@ -254,21 +270,21 @@ if submit_request:
 st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown(
-    "<div class='sticky-cta'>"
-    "<a class='cta-button' href='#assistant-form'>🚨 Get Fast AC Help</a>"
+    f"<div class='sticky-cta'>"
+    f"<a class='cta-button' href='#assistant-form'>{tr('🚨 Get Fast AC Help','🚨 Obtener ayuda rápida')}</a>"
     "</div>",
     unsafe_allow_html=True,
 )
 
 st.markdown("<div class='footer-card'>", unsafe_allow_html=True)
 st.markdown(
-    f"<p><strong>{BUSINESS_NAME}</strong> — Trusted AC repair leads for Haines City homeowners.</p>",
+    f"<p><strong>{BUSINESS_NAME}</strong> — {tr('Trusted AC repair leads for Haines City homeowners.','Leads de reparación de AC confiables para propietarios de Haines City.')}</p>",
     unsafe_allow_html=True,
 )
 st.markdown(
     "<div class='footer-links'>"
-    f"<span>Lead email: {LEAD_EMAIL}</span>"
-    f"<span>Call: <a href='tel:{CALL_TRACKING_NUMBER}' style='color:#0d6efd;text-decoration:none;'>{CALL_TRACKING_NUMBER}</a></span>"
+    f"<span>{tr('Lead email','Correo de prospecto')}: {LEAD_EMAIL}</span>"
+    f"<span>{tr('Call','Llamada')}: <a href='tel:{CALL_TRACKING_NUMBER}' style='color:#0d6efd;text-decoration:none;'>{CALL_TRACKING_NUMBER}</a></span>"
     "</div>",
     unsafe_allow_html=True,
 )
