@@ -115,6 +115,9 @@ section.main {padding: 1.5rem 0 0; max-width: 100%;}
   .section-card, .assistant-card, .service-area, .next-steps-card, .footer-card, .spanish-block {background: #eef4ff; color: #1f2937;}
   .section-card h2, .assistant-card h2, .service-area h3, .next-steps-card h2, .footer-card h2 {color: #0f172a;}
   .section-card p, .assistant-card p, .service-area p, .next-steps-card p, .footer-card p, .spanish-block p, .next-steps-card li {color: #334155;}
+  .final-cta {background: #eef4ff; color: #1f2937;}
+  .final-cta h2 {color: #0f172a;}
+  .final-cta p {color: #334155;}
   .cta-button, .secondary-button {width: 100%; justify-content: center;}
   .assistant-card {padding: 1.5rem;}
   .assistant-step {font-size: 1rem;}
