@@ -42,6 +42,22 @@ section.main {padding: 0; max-width: 100%;}
 .secondary-button {background: rgba(13, 110, 253, 0.12); color: var(--accent) !important;}
 .secondary-button:hover {transform: translateY(-2px);}
 .response-line {font-size: 0.95rem; color: #334155; margin-bottom: 0.75rem; font-weight: 700;}
+.story-section {position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, #ffffff 0%, #eef7ff 100%); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08); padding: 2rem; margin-bottom: 1.5rem; border: 1px solid rgba(13, 110, 253, 0.12);}
+.story-panel {display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1fr); gap: 1.5rem; align-items: center;}
+.story-copy {position: relative; z-index: 1;}
+.story-heading {font-size: clamp(2.4rem, 4.5vw, 3.4rem); line-height: 1.05; margin-bottom: 0.85rem;}
+.story-text {color: #334155; line-height: 1.75; margin-bottom: 1.2rem; max-width: 720px;}
+.story-note {font-size: 0.98rem; color: #475569; margin-top: 0.5rem;}
+.story-image {position: relative; min-height: 260px; border-radius: 28px; background-color: #eaf3ff; background-size: cover; background-position: center; box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12); overflow: hidden;}
+.story-overlay {position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 69, 150, 0.08), rgba(255, 255, 255, 0.26));}
+.section-divider {height: 2px; margin: 1.5rem 0; background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.18), transparent);}
+.final-cta {text-align: center; padding: 2rem 1.25rem; border-radius: 28px; background: linear-gradient(180deg, #fff 0%, #e9f4ff 100%); border: 1px solid rgba(13, 110, 253, 0.14); box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08); margin-bottom: 1.5rem;}
+.final-cta h2 {margin-bottom: 1rem; font-size: clamp(2.2rem, 4vw, 3rem);}
+@media (max-width: 768px) {
+  .story-panel {grid-template-columns: 1fr;}
+  .story-image {min-height: 220px;}
+  .story-heading {font-size: 2rem;}
+}
 .section-card, .assistant-card, .footer-card, .spanish-block, .service-area, .next-steps-card {border-radius: 28px; background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%); box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08); padding: 1.8rem; margin-bottom: 1rem; border: 1px solid rgba(13, 110, 253, 0.08);}
 .next-steps-card ol {padding-left: 1.2rem; margin: 0; color: #334155;}
 .next-steps-card li {margin-bottom: 0.85rem; line-height: 1.6;}
@@ -56,11 +72,16 @@ section.main {padding: 0; max-width: 100%;}
 .badge {display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1rem 1rem 0.95rem; border-radius: 24px; background: rgba(13, 110, 253, 0.06); border: 1px solid rgba(13, 110, 253, 0.12);}
 .badge::before {content: '✓'; display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; background: #0d6efd; color: #fff; border-radius: 50%; font-size: 0.9rem; font-weight: 700;}
 .small-note {font-size: 0.9rem; color: #64748b; margin-top: 1rem;}
-.intro-splash {position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(13, 110, 253, 0.95), rgba(15, 23, 42, 0.95)); color: #fff; flex-direction: column; text-align: center; padding: 2rem; animation: introFade 1.5s ease forwards;}
-.intro-splash::before {content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(255, 255, 255, 0.16), transparent 42%);}
+.intro-splash {position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top left, rgba(221, 237, 255, 0.96), rgba(255, 255, 255, 0.98)); color: #0f172a; flex-direction: column; text-align: center; padding: 2rem; animation: introFade 1.5s ease forwards; overflow: hidden;}
+.intro-splash::before {content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(255,255,255,0.62), transparent 45%);}
+.intro-sun {position: absolute; top: 16%; right: 16%; width: 110px; height: 110px; border-radius: 50%; background: radial-gradient(circle, #fff9c8 0%, #fde68a 48%, #f59e0b 100%); box-shadow: 0 0 50px rgba(245, 158, 11, 0.35); animation: sunGlow 4s ease-in-out infinite;}
+.intro-wind {position: absolute; top: 52%; left: -20%; width: 140%; height: 88px; background: linear-gradient(135deg, rgba(255,255,255,0.35), rgba(255,255,255,0.08) 40%, rgba(255,255,255,0.35)); border-radius: 999px; opacity: 0.8; filter: blur(0.5px); animation: windSlide 3s linear infinite;}
+.intro-wind:nth-child(3) {top: 64%; opacity: 0.55; animation-duration: 3.8s;}
 .intro-splash h1 {margin: 0; font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: 0.03em;}
 .intro-splash p {margin-top: 1rem; font-size: 1.05rem; opacity: 0.92;}
-@keyframes introFade {0% {opacity: 1; transform: translateY(0);} 85% {opacity: 1; transform: translateY(0);} 100% {opacity: 0; transform: translateY(-28px); visibility: hidden;}}
+@keyframes introFade {0% {opacity: 1; transform: translateY(0);} 80% {opacity: 1; transform: translateY(0);} 100% {opacity: 0; transform: translateY(-32px); visibility: hidden;}}
+@keyframes sunGlow {0%, 100% {transform: scale(1);} 50% {transform: scale(1.05);} }
+@keyframes windSlide {0% {transform: translateX(-10%);} 100% {transform: translateX(100%);} }
 @keyframes drift {0% {transform: translateX(0);} 50% {transform: translateX(8px);} 100% {transform: translateX(0);}}
 .hero .eyebrow {animation: drift 6s ease-in-out infinite;}
 @media (min-width: 768px) { .info-grid {grid-template-columns: repeat(2, minmax(0, 1fr));} }
@@ -89,8 +110,11 @@ st.markdown(STYLE, unsafe_allow_html=True)
 
 st.markdown(
     "<div class='intro-splash'>"
+    "<div class='intro-sun'></div>"
+    "<div class='intro-wind'></div>"
+    "<div class='intro-wind'></div>"
     "<h1>Quick Air Haines City</h1>"
-    "<p>Cooling comfort, fast local service.</p>"
+    "<p>Fresh breeze, cool comfort, fast local service.</p>"
     "</div>",
     unsafe_allow_html=True,
 )
@@ -109,39 +133,77 @@ if page_language not in ["English", "Español"]:
 tr = lambda en, es: es if page_language == "Español" else en
 
 st.markdown(
-    "<div class='hero'>"
-    "<div class='hero-layout'>"
-    "<div class='hero-copy'>"
-    f"<div class='eyebrow'>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</div>"
-    f"<h1>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</h1>"
-    f"<p class='subheadline'>{tr('Fast help for AC problems, cooling issues, and urgent HVAC repairs.','Ayuda rápida para problemas de aire acondicionado, problemas de enfriamiento y reparaciones urgentes de HVAC.')}</p>"
+    "<div class='story-section'>"
+    "<div class='story-panel'>"
+    f"<div class='story-copy'>"
+    f"<div class='eyebrow'>{tr('AC Not Cooling in Haines City?','¿El AC no enfría en Haines City?')}</div>"
+    f"<h1 class='story-heading'>{tr('AC Not Cooling in Haines City?','¿El AC no enfría en Haines City?')}</h1>"
+    f"<p class='story-text'>{tr('Hot home in the Florida heat? We offer fast repair, same-day service, and a local team that answers in English and Spanish.','¿Casa caliente con el calor de Florida? Ofrecemos reparación rápida, servicio el mismo día y un equipo local que responde en inglés y español.')}</p>"
     f"<p class='spanish-line'>{tr('🇪🇸 Hablamos Español','🇪🇸 Hablamos Español')}</p>"
     "<div class='cta-group'>"
     f"<a class='cta-button' href='#assistant-form'>{tr('🚨 Get Fast AC Help','🚨 Obtener ayuda rápida')}</a>"
     f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>{tr('🚨 Call Now','🚨 Llamar ahora')}</a>"
     "</div>"
     f"<p class='response-line'>{tr('Average response time: under 5 minutes','Tiempo promedio de respuesta: menos de 5 minutos')}</p>"
-    "<div class='trust-grid'>"
-    f"<div class='trust-pill'>{tr('Same-Day Service','Servicio el mismo día')}</div>"
-    f"<div class='trust-pill'>{tr('Local Haines City Area','Área local de Haines City')}</div>"
-    f"<div class='trust-pill'>{tr('English & Spanish Support','Soporte en inglés y español')}</div>"
-    f"<div class='trust-pill'>{tr('Fast Response Times','Tiempos de respuesta rápidos')}</div>"
     "</div>"
-    "</div>"
-    "<div class='hero-image-grid'>"
-    f"<div class='hero-image tall' style=\"background-image: url('assets/haines-city-home.jpg');\">"
-    f"<span class='hero-visual-label'>{tr('Local Florida home','Hogar local en Florida')}</span>"
-    "</div>"
-    f"<div class='hero-image small' style=\"background-image: url('assets/family-cool-ac.jpg');\">"
-    f"<span class='hero-visual-label'>{tr('Family cool comfort','Comodidad fresca familiar')}</span>"
+    f"<div class='story-image' style=\"background-image: url('assets/broken-ac-home.jpg');\">"
+    f"<div class='story-overlay'></div>"
     "</div>"
     "</div>"
     "</div>"
+    "<div class='section-divider'></div>"
+    "<div class='story-section'>"
+    "<div class='story-panel'>"
+    f"<div class='story-image' style=\"background-image: url('assets/ac-technician-diagnose.jpg');\">"
+    f"<div class='story-overlay'></div>"
+    "</div>"
+    f"<div class='story-copy'>"
+    f"<h2 class='story-heading'>{tr('We quickly diagnose the problem','Diagnosticar rápidamente el problema')}</h2>"
+    f"<p class='story-text'>{tr('Our local technician arrives fast, inspects your system, and explains the repair plan in clear terms.','Nuestro técnico local llega rápido, inspecciona su sistema y explica el plan de reparación con claridad.')}</p>"
+    f"<p class='story-note'>{tr('No jargon. No surprise fees. Just practical, honest repair guidance.','Sin jerga. Sin tarifas sorpresa. Solo orientación práctica y honesta de reparación.')}</p>"
+    "</div>"
+    "</div>"
+    "</div>"
+    "<div class='section-divider'></div>"
+    "<div class='story-section'>"
+    "<div class='story-panel'>"
+    f"<div class='story-copy'>"
+    f"<h2 class='story-heading'>{tr('Fast and reliable repair service','Servicio de reparación rápido y confiable')}</h2>"
+    f"<p class='story-text'>{tr('We fix the cooling issue with a trusted local crew, using quality parts and a safety-first approach.','Reparamos el problema de enfriamiento con un equipo local de confianza, utilizando piezas de calidad y un enfoque de seguridad primero.')}</p>"
+    f"<p class='story-note'>{tr('Same-day repair when possible, and clear communication every step of the way.','Reparación el mismo día cuando sea posible y comunicación clara en cada paso.')}</p>"
+    "</div>"
+    f"<div class='story-image' style=\"background-image: url('assets/ac-technician-repair.jpg');\">"
+    f"<div class='story-overlay'></div>"
+    "</div>"
+    "</div>"
+    "</div>"
+    "<div class='section-divider'></div>"
+    "<div class='story-section'>"
+    "<div class='story-panel'>"
+    f"<div class='story-image' style=\"background-image: url('assets/cool-family-home.jpg');\">"
+    f"<div class='story-overlay'></div>"
+    "</div>"
+    f"<div class='story-copy'>"
+    f"<h2 class='story-heading'>{tr('Comfort restored. Cool air back.','Confort restaurado. Aire frío de regreso.')}</h2>"
+    f"<p class='story-text'>{tr('Enjoy a comfortable home again after a trusted local repair — with quick scheduling and follow-up support.','Disfrute de un hogar cómodo nuevamente después de una reparación local confiable, con programación rápida y soporte de seguimiento.')}</p>"
+    f"<p class='story-note'>{tr('Ready for Florida heat with reliable cooling you can count on.','Listo para el calor de Florida con enfriamiento confiable en el que puede confiar.')}</p>"
+    "</div>"
+    "</div>"
+    "</div>"
+    "<div class='section-divider'></div>"
+    "<div class='final-cta'>"
+    f"<h2>{tr('Ready to fix your AC now?','¿Listo para reparar su AC ahora?')}</h2>"
+    f"<p class='story-text'>{tr('Submit your request and our local Haines City team will respond quickly to schedule your service.','Envíe su solicitud y nuestro equipo local de Haines City responderá rápidamente para programar su servicio.')}</p>"
+    f"<a class='cta-button' href='#assistant-form'>{tr('🚨 Get Fast AC Help','🚨 Obtener ayuda rápida')}</a>"
+    "</div>"
+    "<div class='service-area'>"
+    f"<h3>{tr('Service Area','Área de servicio')}</h3>"
+    f"<p>{tr('Serving Haines City, Lake Wales, Davenport, Winter Haven, Polk City, Babson Park, and nearby Polk County neighborhoods.','Atendemos Haines City, Lake Wales, Davenport, Winter Haven, Polk City, Babson Park y vecindarios cercanos del condado de Polk.')}</p>"
     "</div>",
     unsafe_allow_html=True,
 )
 
-st.markdown("<div class='next-steps-card'>", unsafe_allow_html=True)
+st.markdown("<div id='assistant-form' class='assistant-card'>", unsafe_allow_html=True)
 st.markdown(f"<h2>{tr('What Happens Next?','¿Qué sucede después?')}</h2>", unsafe_allow_html=True)
 st.markdown(
     "<ol>"
