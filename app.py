@@ -174,7 +174,7 @@ st.markdown(
     "<div class='section-divider'></div>"
     "<div class='story-section'>"
     "<div class='story-panel'>"
-    f"<div class='story-image' style=\"background-image: url('{DIAGNOSE_IMG}');\">"
+    f"<div class='story-image large' style=\"background-image: url('{DIAGNOSE_IMG}');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     f"<div class='story-copy'>"
