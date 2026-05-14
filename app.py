@@ -19,15 +19,23 @@ STYLE = """
 body {background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.08), transparent 22%), linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%); color: var(--text); font-family: Inter, system-ui, sans-serif;}
 section.main {padding: 0; max-width: 100%;}
 .block-container {padding: 1rem 1rem 7rem; max-width: 1080px; margin: 0 auto;}
-.hero {position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, #ffffff 0%, #e8f4ff 100%); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12); padding: 2rem 1.8rem 2rem; margin-bottom: 1.5rem; border: 1px solid rgba(13, 110, 253, 0.12);}
+.hero {position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, #ffffff 0%, #e8f4ff 100%); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12); padding: 2rem 1.8rem 1.8rem; margin-bottom: 1.5rem; border: 1px solid rgba(13, 110, 253, 0.12);}
 .hero::before {content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.18), transparent 18%), radial-gradient(circle at bottom left, rgba(13, 110, 253, 0.08), transparent 20%); pointer-events: none;}
+.hero-layout {display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, 1fr); gap: 1.5rem; align-items: center;}
+.hero-copy {position: relative; z-index: 1;}
+.hero-image-grid {display: grid; gap: 1rem;}
+.hero-image {position: relative; min-height: 220px; border-radius: 28px; background-color: #eaf3ff; background-size: cover; background-position: center; box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12); overflow: hidden;}
+.hero-image::after {content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.04), rgba(15, 23, 42, 0.18));}
+.hero-image.tall {min-height: 360px;}
+.hero-image.small {min-height: 180px;}
+.hero-visual-label {position: absolute; left: 1rem; bottom: 1rem; z-index: 2; background: rgba(255, 255, 255, 0.92); color: #0f172a; padding: 0.7rem 1rem; border-radius: 999px; font-size: 0.95rem; font-weight: 700; box-shadow: 0 12px 24px rgba(15, 23, 42, 0.12);}
 .hero .eyebrow {position: relative; z-index: 1; display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; color: #0b5ed7; margin-bottom: 1rem;}
 .hero h1 {position: relative; z-index: 1; font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1.02; margin-bottom: 0.75rem;}
 .hero .subheadline {position: relative; z-index: 1; color: #334155; font-size: 1.05rem; line-height: 1.6; margin-bottom: 1rem; max-width: 760px;}
 .hero .spanish-line {position: relative; z-index: 1; font-weight: 700; color: #0b5ed7; margin-bottom: 1rem;}
 .hero .trust-grid {display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 0.85rem; margin-bottom: 1.2rem;}
 .hero .trust-pill {background: #ffffff; border: 1px solid rgba(13, 110, 253, 0.14); border-radius: 999px; padding: 0.85rem 1rem; color: #0f172a; font-weight: 700; text-align: center; box-shadow: 0 10px 28px rgba(13, 110, 253, 0.08);}
-.hero .cta-group {position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 1rem;}
+.hero .cta-group {position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 0.85rem; margin-bottom: 1.2rem;}
 .cta-button, .secondary-button {display: inline-flex; align-items: center; justify-content: center; border-radius: 999px; padding: 1rem 1.6rem; font-weight: 700; text-decoration: none; transition: transform 0.15s ease, box-shadow 0.15s ease; white-space: nowrap;}
 .cta-button {background: var(--primary); color: #fff !important; box-shadow: 0 16px 32px rgba(13, 110, 253, 0.2);}
 .cta-button:hover {transform: translateY(-2px);}
@@ -44,20 +52,33 @@ section.main {padding: 0; max-width: 100%;}
 .assistant-card h2 {margin-top: 0; margin-bottom: 0.85rem;}
 .assistant-step {font-weight: 700; margin-bottom: 0.45rem; color: var(--accent);}
 .assistant-note {font-size: 0.98rem; color: #475569; margin-bottom: 1rem;}
-.sticky-cta {display: none;}
-.footer-card {text-align: center; font-size: 0.95rem; color: #475569;}
-.footer-links {display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center; margin-top: 1rem;}
-.footer-links span {color: #6b7280;}
+.badge-grid {display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); margin-bottom: 1rem;}
+.badge {display: flex; align-items: center; gap: 0.85rem; padding: 1rem 1rem 1rem 0.95rem; border-radius: 24px; background: rgba(13, 110, 253, 0.06); border: 1px solid rgba(13, 110, 253, 0.12);}
+.badge::before {content: '✓'; display: inline-flex; width: 32px; height: 32px; align-items: center; justify-content: center; background: #0d6efd; color: #fff; border-radius: 50%; font-size: 0.9rem; font-weight: 700;}
+.small-note {font-size: 0.9rem; color: #64748b; margin-top: 1rem;}
+.intro-splash {position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at top, rgba(13, 110, 253, 0.95), rgba(15, 23, 42, 0.95)); color: #fff; flex-direction: column; text-align: center; padding: 2rem; animation: introFade 1.5s ease forwards;}
+.intro-splash::before {content: ''; position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(255, 255, 255, 0.16), transparent 42%);}
+.intro-splash h1 {margin: 0; font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: 0.03em;}
+.intro-splash p {margin-top: 1rem; font-size: 1.05rem; opacity: 0.92;}
+@keyframes introFade {0% {opacity: 1; transform: translateY(0);} 85% {opacity: 1; transform: translateY(0);} 100% {opacity: 0; transform: translateY(-28px); visibility: hidden;}}
+@keyframes drift {0% {transform: translateX(0);} 50% {transform: translateX(8px);} 100% {transform: translateX(0);}}
+.hero .eyebrow {animation: drift 6s ease-in-out infinite;}
 @media (min-width: 768px) { .info-grid {grid-template-columns: repeat(2, minmax(0, 1fr));} }
 @media (max-width: 768px) {
   .block-container {padding-left: 0.75rem; padding-right: 0.75rem; padding-bottom: 8rem;}
-  .hero {padding: 1.6rem 1.2rem 1.6rem;}
+  .hero {padding: 1.4rem 1rem 1rem;}
+  .hero-layout {grid-template-columns: 1fr;}
+  .hero-image-grid {grid-template-columns: 1fr;}
+  .hero-image.tall {min-height: 240px;}
+  .hero-image.small {min-height: 140px;}
   .hero h1 {font-size: 2.4rem;}
   .hero .subheadline {font-size: 1rem;}
   .hero .trust-pill {font-size: 0.95rem; padding: 0.75rem 0.9rem;}
   .cta-button, .secondary-button {width: 100%; justify-content: center;}
   .assistant-card {padding: 1.5rem;}
   .assistant-step {font-size: 1rem;}
+  .badge-grid {grid-template-columns: 1fr;}
+  .service-grid {grid-template-columns: 1fr;}
   .sticky-cta {display: flex; position: fixed; bottom: 0; left: 0; right: 0; justify-content: center; padding: 0.8rem 1rem; background: rgba(255,255,255,0.96); box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.12); z-index: 999;}
   .sticky-cta a {width: 100%;}
 }
@@ -65,6 +86,14 @@ section.main {padding: 0; max-width: 100%;}
 """
 
 st.markdown(STYLE, unsafe_allow_html=True)
+
+st.markdown(
+    "<div class='intro-splash'>"
+    "<h1>Quick Air Haines City</h1>"
+    "<p>Cooling comfort, fast local service.</p>"
+    "</div>",
+    unsafe_allow_html=True,
+)
 
 page_language = st.radio(
     "Language / Idioma",
@@ -79,33 +108,38 @@ if page_language not in ["English", "Español"]:
 
 tr = lambda en, es: es if page_language == "Español" else en
 
-st.markdown("<div class='hero'>", unsafe_allow_html=True)
-st.markdown(f"<div class='eyebrow'>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</div>", unsafe_allow_html=True)
-st.markdown(f"<h1>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</h1>", unsafe_allow_html=True)
 st.markdown(
-    f"<p class='subheadline'>{tr('Fast help for AC problems, cooling issues, and urgent HVAC repairs.','Ayuda rápida para problemas de aire acondicionado, problemas de enfriamiento y reparaciones urgentes de HVAC.')}</p>",
-    unsafe_allow_html=True,
-)
-st.markdown(f"<p class='spanish-line'>{tr('🇪🇸 Hablamos Español','🇪🇸 Hablamos Español')}</p>", unsafe_allow_html=True)
-st.markdown(
+    "<div class='hero'>"
+    "<div class='hero-layout'>"
+    "<div class='hero-copy'>"
+    f"<div class='eyebrow'>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</div>"
+    f"<h1>{tr('Emergency AC Repair in Haines City','Reparaci\u00f3n de AC de emergencia en Haines City')}</h1>"
+    f"<p class='subheadline'>{tr('Fast help for AC problems, cooling issues, and urgent HVAC repairs.','Ayuda rápida para problemas de aire acondicionado, problemas de enfriamiento y reparaciones urgentes de HVAC.')}</p>"
+    f"<p class='spanish-line'>{tr('🇪🇸 Hablamos Español','🇪🇸 Hablamos Español')}</p>"
+    "<div class='cta-group'>"
+    f"<a class='cta-button' href='#assistant-form'>{tr('🚨 Get Fast AC Help','🚨 Obtener ayuda rápida')}</a>"
+    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>{tr('🚨 Call Now','🚨 Llamar ahora')}</a>"
+    "</div>"
+    f"<p class='response-line'>{tr('Average response time: under 5 minutes','Tiempo promedio de respuesta: menos de 5 minutos')}</p>"
     "<div class='trust-grid'>"
     f"<div class='trust-pill'>{tr('Same-Day Service','Servicio el mismo día')}</div>"
     f"<div class='trust-pill'>{tr('Local Haines City Area','Área local de Haines City')}</div>"
     f"<div class='trust-pill'>{tr('English & Spanish Support','Soporte en inglés y español')}</div>"
     f"<div class='trust-pill'>{tr('Fast Response Times','Tiempos de respuesta rápidos')}</div>"
+    "</div>"
+    "</div>"
+    "<div class='hero-image-grid'>"
+    f"<div class='hero-image tall' style=\"background-image: url('assets/haines-city-home.jpg');\">"
+    f"<span class='hero-visual-label'>{tr('Local Florida home','Hogar local en Florida')}</span>"
+    "</div>"
+    f"<div class='hero-image small' style=\"background-image: url('assets/family-cool-ac.jpg');\">"
+    f"<span class='hero-visual-label'>{tr('Family cool comfort','Comodidad fresca familiar')}</span>"
+    "</div>"
+    "</div>"
+    "</div>"
     "</div>",
     unsafe_allow_html=True,
 )
-st.markdown(
-    f"<p class='response-line'>{tr('Average response time: under 5 minutes','Tiempo promedio de respuesta: menos de 5 minutos')}</p>",
-    unsafe_allow_html=True,
-)
-st.markdown(
-    f"<div class='cta-group'><a class='cta-button' href='#assistant-form'>{tr('🚨 Get Fast AC Help','🚨 Obtener ayuda rápida')}</a>"
-    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>{tr('🚨 Call Now','🚨 Llamar ahora')}</a></div>",
-    unsafe_allow_html=True,
-)
-st.markdown("</div>", unsafe_allow_html=True)
 
 st.markdown("<div class='next-steps-card'>", unsafe_allow_html=True)
 st.markdown(f"<h2>{tr('What Happens Next?','¿Qué sucede después?')}</h2>", unsafe_allow_html=True)
