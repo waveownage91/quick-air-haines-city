@@ -77,7 +77,6 @@ st.markdown(
 )
 st.markdown(
     f"<div class='cta-group'><a class='cta-button' href='#assistant-form'>Get Fast AC Help</a>"
-    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>Call Now</a></div>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
@@ -327,14 +326,8 @@ st.markdown(
     unsafe_allow_html=True,
 )
 st.markdown(
-    f"<p class='small-note'>Optional phone support: <a href='tel:{CALL_TRACKING_NUMBER}' style='color:#0d6efd; text-decoration:none;'>{CALL_TRACKING_NUMBER}</a></p>",
-    unsafe_allow_html=True,
-)
-st.markdown(
     "<div class='footer-links'>"
     f"<span>Lead email: {LEAD_EMAIL}</span>"
-    f"<span>Zapier webhook placeholder</span>"
-    f"<span>Twilio placeholder: {TWILIO_PHONE_NUMBER}</span>"
     "</div>",
     unsafe_allow_html=True,
 )
