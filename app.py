@@ -58,13 +58,13 @@ section.main {padding: 1.5rem 0 0; max-width: 100%;}
 .secondary-button:hover {transform: translateY(-2px);}
 .response-line {font-size: 0.95rem; color: #334155; margin-bottom: 0.75rem; font-weight: 700;}
 .story-section {position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, #ffffff 0%, #eef7ff 100%); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08); padding: 2rem; margin-bottom: 1.5rem; border: 1px solid rgba(13, 110, 253, 0.12);}
-.story-panel {display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1fr); gap: 1.5rem; align-items: center;}
+.story-panel {display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1fr); gap: 1.5rem; align-items: stretch;}
 .story-copy {position: relative; z-index: 1;}
 .story-heading {font-size: clamp(2.4rem, 4.5vw, 3.4rem); line-height: 1.05; margin-bottom: 0.85rem;}
 .story-text {color: #334155; line-height: 1.75; margin-bottom: 1.2rem; max-width: 720px;}
 .story-note {font-size: 0.98rem; color: #475569; margin-top: 0.5rem;}
 .story-image {position: relative; min-height: 260px; border-radius: 28px; background-color: #eaf3ff; background-size: cover; background-position: center; box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12); overflow: hidden;}
-.story-image.large {min-height: 420px; background-position: center top;}
+.story-image.large {min-height: 820px; background-position: center center;}
 .story-overlay {position: absolute; inset: 0; background: linear-gradient(180deg, rgba(14, 69, 150, 0.08), rgba(255, 255, 255, 0.26));}
 .section-divider {height: 2px; margin: 1.5rem 0; background: linear-gradient(90deg, transparent, rgba(13, 110, 253, 0.18), transparent);}
 .final-cta {text-align: center; padding: 2rem 1.25rem; border-radius: 28px; background: linear-gradient(180deg, #fff 0%, #e9f4ff 100%); border: 1px solid rgba(13, 110, 253, 0.14); box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08); margin-bottom: 1.5rem;}
@@ -108,9 +108,13 @@ section.main {padding: 1.5rem 0 0; max-width: 100%;}
   .hero-image-grid {grid-template-columns: 1fr;}
   .hero-image.tall {min-height: 240px;}
   .hero-image.small {min-height: 140px;}
+  .story-image.large {min-height: 620px;}
   .hero h1 {font-size: 2.4rem;}
   .hero .subheadline {font-size: 1rem;}
   .hero .trust-pill {font-size: 0.95rem; padding: 0.75rem 0.9rem;}
+  .section-card, .assistant-card, .service-area, .next-steps-card, .footer-card, .spanish-block {background: #eef4ff; color: #1f2937;}
+  .section-card h2, .assistant-card h2, .service-area h3, .next-steps-card h2, .footer-card h2 {color: #0f172a;}
+  .section-card p, .assistant-card p, .service-area p, .next-steps-card p, .footer-card p, .spanish-block p, .next-steps-card li {color: #334155;}
   .cta-button, .secondary-button {width: 100%; justify-content: center;}
   .assistant-card {padding: 1.5rem;}
   .assistant-step {font-size: 1rem;}
