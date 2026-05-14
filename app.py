@@ -17,8 +17,8 @@ STYLE = """
 <style>
 :root { --bg: #eef7ff; --surface: #ffffff; --primary: #0d6efd; --primary-soft: rgba(13, 110, 253, 0.14); --text: #0f172a; --muted: #475569; --accent: #0b5ed7; }
 body {background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.08), transparent 22%), linear-gradient(180deg, #f7fbff 0%, #eef6ff 100%); color: var(--text); font-family: Inter, system-ui, sans-serif;}
-section.main {padding: 0; max-width: 100%;}
-.block-container {padding: 1rem 1rem 7rem; max-width: 1080px; margin: 0 auto;}
+section.main {padding: 1.5rem 0 0; max-width: 100%;}
+.block-container {padding: 1.5rem 1rem 7rem; max-width: 1080px; margin: 0 auto;}
 .hero {position: relative; overflow: hidden; border-radius: 32px; background: linear-gradient(180deg, #ffffff 0%, #e8f4ff 100%); box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12); padding: 2rem 1.8rem 1.8rem; margin-bottom: 1.5rem; border: 1px solid rgba(13, 110, 253, 0.12);}
 .hero::before {content: ''; position: absolute; inset: 0; background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.18), transparent 18%), radial-gradient(circle at bottom left, rgba(13, 110, 253, 0.08), transparent 20%); pointer-events: none;}
 .hero-layout {display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, 1fr); gap: 1.5rem; align-items: center;}
@@ -146,7 +146,7 @@ st.markdown(
     "</div>"
     f"<p class='response-line'>{tr('Average response time: under 5 minutes','Tiempo promedio de respuesta: menos de 5 minutos')}</p>"
     "</div>"
-    f"<div class='story-image' style=\"background-image: url('assets/broke-ac-home.jpg');\">"
+    f"<div class='story-image' style=\"background-image: url('assets/broken-ac-home.jpg');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     "</div>"
@@ -172,7 +172,7 @@ st.markdown(
     f"<p class='story-text'>{tr('We fix the cooling issue with a trusted local crew, using quality parts and a safety-first approach.','Reparamos el problema de enfriamiento con un equipo local de confianza, utilizando piezas de calidad y un enfoque de seguridad primero.')}</p>"
     f"<p class='story-note'>{tr('Same-day repair when possible, and clear communication every step of the way.','Reparación el mismo día cuando sea posible y comunicación clara en cada paso.')}</p>"
     "</div>"
-    f"<div class='story-image' style=\"background-image: url('assets/ac-technican-repair.jpg');\">"
+    f"<div class='story-image' style=\"background-image: url('assets/ac-technician-repair.jpg');\">"
     f"<div class='story-overlay'></div>"
     "</div>"
     "</div>"
