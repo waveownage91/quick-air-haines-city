@@ -65,18 +65,28 @@ section.main {padding: 0; max-width: 100%;}
 st.markdown(STYLE, unsafe_allow_html=True)
 
 st.markdown("<div class='hero'>", unsafe_allow_html=True)
+st.markdown("<div class='meta-row'><span class='badge-pill'>Same-day AC response in Haines City</span><span class='badge-pill'>Friendly bilingual support</span></div>", unsafe_allow_html=True)
 st.markdown("<h1>Get Fast AC Help in Haines City</h1>", unsafe_allow_html=True)
 st.markdown(
-    "<p class='subtitle'>A local HVAC specialist will review your request and reach out quickly by text, phone, or email.</p>",
+    "<p class='subtitle'>A local HVAC specialist reviews your request and connects with you quickly by text, phone, or email.</p>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    "<p class='note'><strong>Servicio en Español Disponible</strong> — Fill out the intake form below or choose your preferred contact method.</p>",
+    "<p class='note'><strong>Servicio en Español Disponible</strong> — Tell us your issue and we’ll match you with local cooling help.</p>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    f"<a class='cta-button' href='#assistant-form'>Get Fast AC Help</a>"
-    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>Optional Call</a>",
+    f"<div class='cta-group'><a class='cta-button' href='#assistant-form'>Get Fast AC Help</a>"
+    f"<a class='secondary-button' href='tel:{CALL_TRACKING_NUMBER}'>Call Now</a></div>",
+    unsafe_allow_html=True,
+)
+st.markdown("</div>", unsafe_allow_html=True)
+
+st.markdown("<div class='impact-card'>", unsafe_allow_html=True)
+st.markdown(
+    "<div class='impact-item'><strong>Reliable local service</strong><p>We focus on Haines City homes and Polk County heat, delivering trusted HVAC care when you need it most.</p></div>"
+    "<div class='impact-item'><strong>Clear pricing & communication</strong><p>Know what to expect before technicians arrive, with fast follow-up by phone, text, or email.</p></div>"
+    "<div class='impact-item'><strong>Prepared for emergencies</strong><p>Same-day attention for no cooling, leaks, and urgent AC breakdowns.</p></div>",
     unsafe_allow_html=True,
 )
 st.markdown("</div>", unsafe_allow_html=True)
